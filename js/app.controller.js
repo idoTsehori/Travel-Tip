@@ -1,6 +1,6 @@
 import { locService } from './services/loc.service.js'
 import { mapService } from './services/map.service.js'
-import { mapService } from './services/async-storage.service.js'
+import {  } from './services/async-storage.service.js'
 
 
 window.onload = onInit
