@@ -5,4 +5,43 @@
 
 body {
   background-color: rgb(253, 253, 241);
+   display: grid;
+  grid-template-columns: minmax(20px,1fr) minmax(auto, 980px) minmax(20px,1fr);
+
+}
+main{
+  grid-column: 2;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header div {
+  display: flex;
+  gap: 11px;
+}
+
+.location {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-content-container {
+  display: flex;
+  gap: 20px;
+}
+.locations-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid black;
+  padding: 10px;
+}
+.locations-weather{
+  border: 1px solid red;
+}
+.locations-table{
+  border: 1px solid blue;
 }
