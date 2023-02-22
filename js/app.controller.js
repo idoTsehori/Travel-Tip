@@ -6,6 +6,7 @@ window.onAddMarker = onAddMarker
 window.onPanTo = onPanTo
 window.onGetLocs = onGetLocs
 window.onGetUserPos = onGetUserPos
+window.onDelete = onDelete
 
 // locService.getLocs().then((res) => console.log(res))
 
@@ -34,9 +35,12 @@ function renderLocsTable() {
   locService.getLocs().then((locs) => {
     const strHTMLs = locs.map((loc) => {
       return `
+      <article class="loc">
       Name: ${loc.name}
       Lat: ${loc.lat}, Lng: ${loc.lng}
       <button onclick="onPanTo(${loc.lat},${loc.lng})">Go</button>
+      <button onclick="onDelete('${loc.id}')">Delete</button>
+      </article>
       `
     })
     document.querySelector('.locations-info .locs').innerHTML = strHTMLs.join('')
@@ -86,4 +90,9 @@ function onGetUserPos() {
 function onPanTo(lat, lng) {
   console.log('Panning the Map')
   mapService.panTo(lat, lng)
+}
+
+function onDelete(locId) {
+  console.log('locId:', locId)
+  locService.remove(locId).then(renderLocsTable)
 }

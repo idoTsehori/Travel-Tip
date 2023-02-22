@@ -78,6 +78,10 @@ button:hover {
   border-radius: 10px;
 }
 
+.locations-table .loc {
+  display: flex;
+}
+
 /** btns - container */
 .btns-container {
   display: flex;
