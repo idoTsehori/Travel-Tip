@@ -1,7 +1,10 @@
 import { locService } from './services/loc.service.js'
 import { mapService } from './services/map.service.js'
-import {  } from './services/async-storage.service.js'
 
+ locService.getLocs()
+.then(res =>{
+    console.log('res', res)
+})
 
 window.onload = onInit
 window.onAddMarker = onAddMarker
@@ -11,8 +14,18 @@ window.onGetUserPos = onGetUserPos
 
 function onInit() {
     mapService.initMap()
-        .then(() => {
-            console.log('Map is ready')
+        .then((map) => {
+            // console.log('Map is ready')
+            map.addListener('click', (ev) => {
+                console.log('ev', ev)
+                const name = prompt('Place name?', 'Place 1')
+                const lat = ev.latLng.lat()
+                const lng = ev.latLng.lng()
+                const location = locService.createLocation(name,lat,lng)
+                locService.save(location).then(res => {
+                    console.log(res)
+                })
+              })
         })
         .catch(() => console.log('Error: cannot init map'))
 }
