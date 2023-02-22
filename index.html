@@ -1,25 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TravelTip</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <h1>TravelTip Starter</h1>
-    <div id="map" style="width: 100%; height: 400px;"></div>
-    <button onclick="onAddMarker()" class="btn-add-marker">Add Marker Speific Location</button>
-    <button onclick="onGetUserPos()" class="btn-user-pos">Get User Position</button>
-    <button onclick="onGetLocs()" class="btn-get-locs">Get Locations</button>
-    <button onclick="onPanTo()"class="btn-pan">Pan Map to Tokyo</button>
- 
-    <p>You are at: <span class="user-pos"></span></p>
-    <p>Locations: 
-        <pre class="locs"></pre>
-    </p>
-    
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>TravelTip Starter</h1>
+        <div>
+          <form onsubmit="onLocationSearch(event)">
+            <input placeholder="Enter Location" type="text" />
+            <input type="submit" value="GO" />
+          </form>
+          <button type="button">My Location</button>
+        </div>
+      </header>
+      <section class="location">
+        <p>Location:<span class="user-pos">Central Park, New York</span></p>
+
+        <button>Copy Location</button>
+      </section>
+
+      <section class="main-content-container">
+        <div id="map" style="width: 450vw; height: 400px"></div>
+
+        <div class="locations-info">
+          <div class="locations-weather">
+            <h1>weather-container</h1>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis vel laudantium animi
+            eum vitae consequuntur tenetur harum perferendis? Hic debitis, tempora totam optio
+            recusandae facere pariatur eaque inventore nulla cupiditate rerum quaerat necessitatibus
+            incidunt omnis. blabalabalbalbalbalabalablablabalbalbalablabalbalbllbalabalbalb
+          </div>
+          <div class="locations-table">
+            <div class="locs">
+              <p>Locations:</p>
+              <!-- !TRY TO CHANGE TO PRE -->
+              <p>ISRAEL : TELAVIV,ASHKELON,EVEN GVIROL</p>
+              <p>ISRAEL : TELAVIV,ASHKELON,EVEN GVIROL</p>
+              <p>ISRAEL : TELAVIV,ASHKELON,EVEN GVIROL</p>
+              <p>ISRAEL : TELAVIV,ASHKELON,EVEN GVIROL</p>
+              <p>ISRAEL : TELAVIV,ASHKELON,EVEN GVIROL</p>
+              <p>ISRAEL : TELAVIV,ASHKELON,EVEN GVIROL</p>
+              <p>ISRAEL : TELAVIV,ASHKELON,EVEN GVIROL</p>
+              <p>ISRAEL : TELAVIV,ASHKELON,EVEN GVIROL</p>
+              <p>ISRAEL : TELAVIV,ASHKELON,EVEN GVIROL</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="btns-container">
+        <button onclick="onAddMarker()" class="btn-add-marker">Add Marker Speific Location</button>
+        <button onclick="onGetUserPos()" class="btn-user-pos">Get User Position</button>
+        <button onclick="onGetLocs()" class="btn-get-locs">Get Locations</button>
+        <button onclick="onPanTo()" class="btn-pan">Pan Map to Tokyo</button>
+      </section>
+    </main>
 
     <script type="module" src="js/app.controller.js"></script>
-</body>
+  </body>
 </html>

@@ -4,5 +4,83 @@
 }
 
 body {
+  font-family: Arial, Helvetica, sans-serif;
   background-color: rgb(253, 253, 241);
+  display: grid;
+  grid-template-columns: minmax(20px, 1fr) minmax(auto, 910px) minmax(20px, 1fr);
+}
+
+/** CONTAINER KING */
+main {
+  margin-top: 10px;
+  grid-column: 2;
+  background-color: rgb(220, 241, 211);
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 15px;
+  padding: 15px 10px 0px 10px;
+}
+
+/** HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+}
+
+header div {
+  display: flex;
+  gap: 11px;
+}
+
+/** ALL BUTTONS */
+button {
+  background-color: rgb(220, 230, 255);
+  padding: 0.5em;
+  border-radius: 10px;
+  border: none;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(200, 212, 241);
+  scale: 1.05;
+}
+
+/** LOCATION CONTAINER */
+.location {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 23px;
+}
+
+/**MAIN CONTENT CONTAINER */
+.main-content-container {
+  display: flex;
+  gap: 20px;
+}
+.locations-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+.locations-weather {
+  padding: 7px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.locations-table {
+  padding: 7px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+/** btns - container */
+.btns-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 14px;
 }
