@@ -3,6 +3,7 @@ import { storageService } from './async-storage.service.js'
 export const locService = {
   getLocs,
 }
+const LOC_KEY = 'locDB'
 
 // console.log('storageService:', storageService)
 
@@ -11,14 +12,17 @@ const locs = [
   { name: 'Neveragain', lat: 32.047201, lng: 34.832581 },
 ]
 
-// function getLocs() {
-//   return storageService.query()
-// }
-
+getLocs()
 function getLocs() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(locs)
-    }, 2000)
+  return storageService.query(LOC_KEY).then((loc) => {
+    loc.post()
   })
 }
+
+// function getLocs() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve(locs)
+//     }, 2000)
+//   })
+// }
