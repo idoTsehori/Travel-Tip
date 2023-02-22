@@ -39,7 +39,6 @@ function save(location) {
     //UPDATES OBJECTS
     return storageService.put(LOC_KEY, location)
   } else {
-    console.log('location', location)
     //ADDS OBJECt
     return storageService.post(LOC_KEY, location)
   }

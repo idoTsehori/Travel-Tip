@@ -12,14 +12,14 @@
         <h1>TravelTip Starter</h1>
         <div>
           <form onsubmit="onLocationSearch(event)">
-            <input placeholder="Enter Location" type="text" />
-            <input type="submit" value="GO" />
+            <input name="search" placeholder="Enter Location" type="text" />
+            <button type="submit">Search</button>
           </form>
-          <button type="button">My Location</button>
+          <button onclick="onGetUserPos()"  type="button">My Location</button>
         </div>
       </header>
       <section class="location">
-        <p>Location:<span class="user-pos">Central Park, New York</span></p>
+        <p>Location: <span class="user-pos"></span></p>
 
         <button>Copy Location</button>
       </section>
