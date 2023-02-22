@@ -1,10 +1,6 @@
 import { locService } from './services/loc.service.js'
 import { mapService } from './services/map.service.js'
 
- locService.getLocs()
-.then(res =>{
-    console.log('res', res)
-})
 
 window.onload = onInit
 window.onAddMarker = onAddMarker
