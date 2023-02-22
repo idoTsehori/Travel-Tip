@@ -19,8 +19,24 @@ function initMap(lat = 32.0749831, lng = 34.9120554) {
                 zoom: 15
             })
             console.log('Map!', gMap)
+            gMap.addListener('click', (ev) => {
+                console.log('ev', ev)
+                const name = prompt('Place name?', 'Place 1')
+                const lat = ev.latLng.lat()
+                const lng = ev.latLng.lng()
+                console.log('lat', lat)
+                console.log('lng', lng)
+              //   addPlace(name, lat, lng, gMap.getZoom())
+              //   renderPlaces()
+              //   renderMarkers()
+              })
+            
+              // renderMarkers()
         })
+        
 }
+
+
 
 function addMarker(loc) {
     var marker = new google.maps.Marker({
@@ -30,6 +46,7 @@ function addMarker(loc) {
     })
     return marker
 }
+
 
 function panTo(lat, lng) {
     var laLatLng = new google.maps.LatLng(lat, lng)
