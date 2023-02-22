@@ -5,6 +5,7 @@ export const locService = {
   getLocs,
   save,
   createLocation,
+  remove,
 }
 
 const LOC_KEY = 'locDB'
@@ -42,4 +43,8 @@ function save(location) {
     //ADDS OBJECt
     return storageService.post(LOC_KEY, location)
   }
+}
+
+function remove(locId) {
+  return storageService.remove(LOC_KEY, locId)
 }
