@@ -1,8 +1,8 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
 }
 
-body{
-    background-color: aqua;
+body {
+  background-color: rgb(253, 253, 241);
 }
