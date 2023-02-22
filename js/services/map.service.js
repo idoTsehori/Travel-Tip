@@ -10,35 +10,30 @@ export const mapService = {
 var gMap
 
 function initMap(lat = 32.0749831, lng = 34.9120554) {
-    console.log('InitMap')
-    return _connectGoogleApi()
-        .then(() => {
-            console.log('google available')
-           return gMap = new google.maps.Map(
-                document.querySelector('#map'), {
-                center: { lat, lng },
-                zoom: 15
-            })
-            // console.log('Map!', gMap)
-            // gMap.addListener('click', (ev) => {
-            //     console.log('ev', ev)
-            //     const name = prompt('Place name?', 'Place 1')
-            //     const lat = ev.latLng.lat()
-            //     const lng = ev.latLng.lng()
-            //     const location=createLocation(name,lat,lng)
-            //     locService.save(location).then(renderLocOnList)
+  console.log('InitMap')
+  return _connectGoogleApi().then(() => {
+    console.log('google available')
+    return (gMap = new google.maps.Map(document.querySelector('#map'), {
+      center: { lat, lng },
+      zoom: 15,
+    }))
+    // console.log('Map!', gMap)
+    // gMap.addListener('click', (ev) => {
+    //     console.log('ev', ev)
+    //     const name = prompt('Place name?', 'Place 1')
+    //     const lat = ev.latLng.lat()
+    //     const lng = ev.latLng.lng()
+    //     const location=createLocation(name,lat,lng)
+    //     locService.save(location).then(renderLocOnList)
 
-              //   addPlace(name, lat, lng, gMap.getZoom())
-              //   renderPlaces()
-              //   renderMarkers()
-            //   })
-            
-              // renderMarkers()
-        })
-        
+    //   addPlace(name, lat, lng, gMap.getZoom())
+    //   renderPlaces()
+    //   renderMarkers()
+    //   })
+
+    // renderMarkers()
+  })
 }
-
-
 
 function addMarker(loc) {
   var marker = new google.maps.Marker({
@@ -48,7 +43,6 @@ function addMarker(loc) {
   })
   return marker
 }
-
 
 function panTo(lat, lng) {
   var laLatLng = new google.maps.LatLng(lat, lng)
