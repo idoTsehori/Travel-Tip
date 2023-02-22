@@ -12,13 +12,6 @@ const locs = [
   { name: 'Neveragain', lat: 32.047201, lng: 34.832581 },
 ]
 
-getLocs()
-function getLocs() {
-  return storageService.query(LOC_KEY).then((loc) => {
-    loc.post()
-  })
-}
-
 // function getLocs() {
 //   return new Promise((resolve, reject) => {
 //     setTimeout(() => {
